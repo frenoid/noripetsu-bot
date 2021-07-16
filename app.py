@@ -2,6 +2,7 @@ import re
 from flask import Flask, request
 import telegram
 from telebot.credentials import bot_token, bot_user_name,URL
+from time import sleep, time
 
 global bot
 global TOKEN
@@ -39,31 +40,53 @@ def respond():
        msg = """
        hughug
        """
+       bot.sendChatAction(chat_id=chat_id, action="typing")
+       sleep(1.5)
        bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    elif text == "/kisskiss":
         msg = """
         lovelove
         """
+        bot.sendChatAction(chat_id=chat_id, action="typing")
+        sleep(1.5)
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    elif text == "/fact":
-        msg = """
-        Did you the the arc d'triomphe is a copy of the arc in Rome?
-        """
+        if int(time()) % 2 == 0:
+            msg = """
+            Did you know the arc d'triomphe is a copy of the arc in Rome?
+            """
+        else:
+            msg = """
+            Did you know Ryanair baggage bins can be outsmarted by zipping up the expandable section?
+            """
+        bot.sendChatAction(chat_id=chat_id, action="typing")
+        sleep(1.5)
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    elif text == "/story":
-        msg = """
-        Once upon a time, a girl got onto a bus and fell asleep. Normnorm went to the toilet and she got kidnapped. End of story. 
-        """
+        if int(time()) % 2 == 0:
+            msg = """
+            Once upon a time, a girl got onto a bus and fell asleep. Normnorm went to the toilet and she got kidnapped. End of story. 
+            """
+        else:
+            msg = """
+            Once upon a time, a girl landed in Paris and thought Kah Wee is Normnorm despite the fact that Normnorm looks like Jungkook. End of story.
+            """
+        bot.sendChatAction(chat_id=chat_id, action="typing")
+        sleep(1.5)
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    elif text == "/hughug":
         msg = """
         kisskiss
         """
+        bot.sendChatAction(chat_id=chat_id, action="typing")
+        sleep(1.5)
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    elif text == "/joke":
         msg = """
         What do you call a group of puns? Answer: A punnet of puns. HAHAHA!
         """
+        bot.sendChatAction(chat_id=chat_id, action="typing")
+        sleep(1.5)
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    else:
        try:
@@ -74,6 +97,9 @@ def respond():
            # reply with a photo to the name the user sent,
            # note that you can send photos by url and telegram will fetch it for you
            bot.sendPhoto(chat_id=chat_id, photo=url, reply_to_message_id=msg_id)
+           bot.sendChatAction(chat_id=chat_id, action="typing")
+           sleep(2)
+           bot.sendMessage(chat_id=chat_id, text="STOP PLAYING WITH A BOT AND WORK", reply_to_message_id=msg_id)
        except Exception:
            # if things went wrong
            bot.sendMessage(chat_id=chat_id, text="There was a problem in the name you used, please enter different name", reply_to_message_id=msg_id)
