@@ -55,8 +55,16 @@ def respond():
         Once upon a time, a girl got onto a bus and fell asleep. Normnorm went to the toilet and she got kidnapped. End of story. 
         """
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
-        
-
+   elif text == "/hughug":
+        msg = """
+        kisskiss
+        """
+        bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
+   elif text == "/joke":
+        msg = """
+        What do you call a group of puns? Answer: A punnet of puns. HAHAHA!
+        """
+        bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    else:
        try:
            # clear the message we got from any non alphabets
