@@ -35,6 +35,8 @@ def respond():
        msg = """
        NO
        """
+       bot.sendChatAction(chat_id=chat_id, action="typing")
+       sleep(1.25)
        bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    elif text == "/love":
        msg = """
@@ -51,9 +53,21 @@ def respond():
         sleep(1.5)
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    elif text == "/fact":
-        if int(time()) % 2 == 0:
+        if int(time()) % 4 == 0:
             msg = """
             Did you know the arc d'triomphe is a copy of the arc in Rome?
+            """
+        elif int(time()) % 4 == 1:
+            msg = """
+            Did you know it's cheaper to buy a book of 10 metro tickets then each one individually? 
+            """
+        elif int(time()) % 4 == 2:
+            msg = """
+            Did you know Pyramides has tons of terrific Korean restos nearby?
+            """
+        elif int(time()) % 4 == 3:
+            msg = """
+            Did you know you shouldn't propose to a girl if she's standing in front of a rubbish bin?
             """
         else:
             msg = """
@@ -63,9 +77,17 @@ def respond():
         sleep(1.5)
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    elif text == "/story":
-        if int(time()) % 2 == 0:
+        if int(time()) % 4 == 0:
             msg = """
             Once upon a time, a girl got onto a bus and fell asleep. Normnorm went to the toilet and she got kidnapped. End of story. 
+            """
+        elif int(time()) % 4 == 1:
+            msg = """
+            Once upon a time, a girl took a train to Colmar cuz all her roomies were jerks. She ate a deliciously sweet broccoli and didn't finish her onion soup. End of story
+            """
+        elif int(time()) % 4 == 2:
+            msg = """
+            Once upon a time, a girl had korean bbq, and she had it the next week and the week after. Her bf then died from kimchi poisoning. End of story.
             """
         else:
             msg = """
