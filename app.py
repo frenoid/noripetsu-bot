@@ -35,6 +35,27 @@ def respond():
        NO
        """
        bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
+   elif text == "/love":
+       msg = """
+       hughug
+       """
+       bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
+   elif text == "/kisskiss":
+        msg = """
+        lovelove
+        """
+        bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
+   elif text == "/fact":
+        msg = """
+        Did you the the arc d'triomphe is a copy of the arc in Rome?
+        """
+        bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
+   elif text == "/story":
+        msg = """
+        Once upon a time, a girl got onto a bus and fell asleep. Normnorm went to the toilet and she got kidnapped. End of story. 
+        """
+        bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
+        
 
    else:
        try:
