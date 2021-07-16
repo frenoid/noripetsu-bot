@@ -19,7 +19,7 @@ def respond():
    chat_id = update.message.chat.id
    msg_id = update.message.message_id
 
-   time_mod_ten = int(time()) % 10
+   time_mod_10 = int(time()) % 10
 
    # Telegram understands UTF-8, so encode text for unicode compatibility
    text = update.message.text.encode('utf-8').decode()
