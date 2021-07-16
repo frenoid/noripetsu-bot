@@ -19,6 +19,8 @@ def respond():
    chat_id = update.message.chat.id
    msg_id = update.message.message_id
 
+   time_mod_ten = int(time()) % 10
+
    # Telegram understands UTF-8, so encode text for unicode compatibility
    text = update.message.text.encode('utf-8').decode()
    # for debugging purposes only
@@ -53,21 +55,45 @@ def respond():
         sleep(1.5)
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    elif text == "/fact":
-        if int(time()) % 4 == 0:
+        if time_mod_10 == 0:
             msg = """
             Did you know the arc d'triomphe is a copy of the arc in Rome?
             """
-        elif int(time()) % 4 == 1:
+        elif time_mod_10 == 1:
             msg = """
             Did you know it's cheaper to buy a book of 10 metro tickets then each one individually? 
             """
-        elif int(time()) % 4 == 2:
+        elif time_mod_10 == 2:
             msg = """
             Did you know Pyramides has tons of terrific Korean restos nearby?
             """
-        elif int(time()) % 4 == 3:
+        elif time_mod_10 == 3:
             msg = """
             Did you know you shouldn't propose to a girl if she's standing in front of a rubbish bin?
+            """
+        elif time_mod_10 == 4:
+            msg = """
+            Did you know Carrefour prices are lower outside of the city centre?
+            """
+        elif time_mod_10 == 5:
+            msg = """
+            The quickest way to a girl heart is to bang nails into her wall
+            """
+        elif time_mod_10 == 6:
+            msg = """
+            You can get a tarte aux fraises and tartes au citron at a bargain at Monoprix
+            """
+        elif time_mod_10 == 7:
+            msg = """
+            Don't cross the skiis going downhill or you're gonna have bad time
+            """
+        elif time_mod_10 == 8:
+            msg = """
+            Helsinki airport sells fantastic hotdogs. The secret is in the garnish.
+            """
+        elif time_mod_10 == 9:
+            msg = """
+            Place d'Italie is now Chinatown.
             """
         else:
             msg = """
@@ -77,17 +103,45 @@ def respond():
         sleep(1.5)
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    elif text == "/story":
-        if int(time()) % 4 == 0:
+        if time_mod_10 == 0:
             msg = """
             Once upon a time, a girl got onto a bus and fell asleep. Normnorm went to the toilet and she got kidnapped. End of story. 
             """
-        elif int(time()) % 4 == 1:
+        elif time_mod_10 == 1:
             msg = """
             Once upon a time, a girl took a train to Colmar cuz all her roomies were jerks. She ate a deliciously sweet broccoli and didn't finish her onion soup. End of story
             """
-        elif int(time()) % 4 == 2:
+        elif time_mod_10 == 2:
             msg = """
             Once upon a time, a girl had korean bbq, and she had it the next week and the week after. Her bf then died from kimchi poisoning. End of story.
+            """
+        elif time_mod_10 == 3:
+            msg = """
+            Once upon a time, a girl went to Poland to stay in a sketchy apartment. She exchanged contacts with stranges and took pictures of architecture. End of story.
+            """
+        elif time_mod_10 == 4:
+            msg = """
+            Once upon a time, a girl had a boyfriend who scored 100 points at arcade basketball. Then she met one who could tell her fun facts and changed boyfriends. End of story.
+            """
+        elif time_mod_10 == 5:
+            msg = """
+            Once upon a time, a girl went to Paris but spoke no French. Then she learnt un hotdog svp and went clubbing at Montparnasse with Daisy. End of story.
+            """
+        elif time_mod_10 == 6:
+            msg = """
+            Once upon a time, a girl lived in the topmost apartment in Paris. Her roomies kept leaving cups on top of her wardrobe. In return she fed them cough medicine. End of story.
+            """
+        elif time_mod_10 == 7:
+            msg = """
+            Once upon a time, a girl put a bag of rice into a rice cooker and flew to Paris. Her roomies ate all of her rice and made her cook marmite chicken. End of story.
+            """
+        elif time_mod_10 == 8:
+            msg = """
+            Once upon a time, a girl went walking in Florence by herself because her roomies wanted to stay in. She took the most beautiful photos and sat at a cafe. End of story.
+            """
+        elif time_mod_10 == 9:
+            msg = """
+            Once upon a time, a girl stayed at St. Kilda and wanted to visit relatives in the city. She walked 40 min to the city centre and enjoyed roast duck at Chinatown. They had season parking. End of story.
             """
         else:
             msg = """
