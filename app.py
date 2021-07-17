@@ -90,9 +90,7 @@ def respond():
         sleep(1.5)
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
    elif text == "/joke":
-        msg = """
-        What do you call a group of puns? Answer: A punnet of puns. HAHAHA!
-        """
+        msg = get_an_x(key="joke")
         bot.sendChatAction(chat_id=chat_id, action="typing")
         sleep(1.5)
         bot.sendMessage(chat_id=chat_id, text=msg, reply_to_message_id=msg_id)
