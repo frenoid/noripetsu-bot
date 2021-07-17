@@ -1,8 +1,10 @@
 import re
 from flask import Flask, request
+import boto3
 import telegram
-from telebot.credentials import bot_token, bot_user_name,URL
+from telebot.credentials import bot_token, bot_user_name, URL, aws_access_key_id, aws_secret_access_key
 from time import sleep, time
+from io import BytesIO 
 
 global bot
 global TOKEN
