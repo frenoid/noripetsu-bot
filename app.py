@@ -8,7 +8,7 @@ from time import sleep, time
 from io import BytesIO 
 
 def get_an_x(key: str) -> str:
-  session = boto3.Session(aws_access_key_id="AKIAVI6P3SPVVXYIYE4D", aws_secret_access_key="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", region_name="ap-southeast-1")
+  session = boto3.Session(aws_access_key_id=aws_access_key_id, aws_secret_access_key=aws_secret_access_key, region_name="ap-southeast-1")
   bucket = "noripetsu-bot"
 
   s3_client = session.client("s3")
