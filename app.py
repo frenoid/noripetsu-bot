@@ -3,7 +3,7 @@ import re
 from flask import Flask, request
 import boto3
 import telegram
-from telebot.credentials import bot_token, bot_user_name, URL, aws_access_key_id, aws_secret_access_key
+from telebot.credentials import bot_token, bot_user_name, URL, aws_access_key_id, aws_secret_access_key, s3_bucket
 from time import sleep, time
 from io import BytesIO 
 
@@ -12,7 +12,7 @@ def get_an_x(key: str) -> str:
   bucket = "noripetsu-bot"
 
   s3_client = session.client("s3")
-  res = s3_client.list_objects(Bucket=bucket, Prefix="{}/".format(key), MaxKeys=1000)
+  res = s3_client.list_objects(Bucket=s3_bucket, Prefix="{}/".format(key), MaxKeys=1000)
   number_of_x = len(res["Contents"])
   pick = key + "/" +  str(random.randint(1,number_of_x-1)) + ".txt"
 
